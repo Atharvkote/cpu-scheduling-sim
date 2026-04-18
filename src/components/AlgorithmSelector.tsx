@@ -1,11 +1,11 @@
 import React from 'react';
 import { useSimulationStore } from '../store/useSimulationStore';
 import { ALGORITHMS } from '../constants/algorithms';
-import { LayoutGrid, RotateCcw, Download, Moon, Sun } from 'lucide-react';
+import { LayoutGrid, RotateCcw, Download, Moon } from 'lucide-react';
 import { exportToCSV } from '../utils/helpers';
 
 export const AlgorithmSelector: React.FC = () => {
-  const { selectedAlgorithmId, setSelectedAlgorithm, resetSimulation, result } = useSimulationStore();
+  const { selectedAlgorithmId, setSelectedAlgorithm, reset, result } = useSimulationStore();
 
   const handleExport = () => {
     if (!result) return;
@@ -52,7 +52,7 @@ export const AlgorithmSelector: React.FC = () => {
 
       <div className="flex items-center gap-3">
         <button 
-          onClick={resetSimulation}
+          onClick={() => reset()}
           className="p-2.5 rounded-xl bg-card border border-white/5 text-text-muted hover:text-primary hover:border-primary/30 transition-all group"
           title="Reset Simulation"
         >
@@ -73,4 +73,3 @@ export const AlgorithmSelector: React.FC = () => {
     </div>
   );
 };
-

@@ -7,7 +7,6 @@ import {
   CartesianGrid, 
   Tooltip, 
   ResponsiveContainer, 
-  Legend, 
   Cell 
 } from 'recharts';
 import { useSimulationStore } from '../store/useSimulationStore';

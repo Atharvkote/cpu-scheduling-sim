@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ALGORITHMS } from '../constants/algorithms';
 import { Card } from './ui/Card';
 import { useSimulationStore } from '../store/useSimulationStore';
-import { ArrowUpRight, Zap, Info, ExternalLink } from 'lucide-react';
+import { Zap, ExternalLink } from 'lucide-react';
 
 export const AlgorithmGrid: React.FC = () => {
   const { selectedAlgorithmId, setSelectedAlgorithm } = useSimulationStore();

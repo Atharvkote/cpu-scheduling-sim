@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { ErrorBoundary } from 'react-error-boundary';
 
 import { ErrorPage } from './pages/ErrorPage';
-
 // Lazy load pages
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Simulation = lazy(() => import('./pages/Simulation'));

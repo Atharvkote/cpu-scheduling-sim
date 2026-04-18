@@ -12,24 +12,22 @@ import {
    ArrowLeft,
    CheckCircle2,
    XCircle,
-   Lightbulb,
    Terminal,
-   BookOpen,
    Cpu
 } from 'lucide-react';
 
 const AlgorithmDetail: React.FC = () => {
    const { id } = useParams<{ id: string }>();
-   const { setSelectedAlgorithm, runSimulation } = useSimulationStore();
+   const { setSelectedAlgorithm, calculate } = useSimulationStore();
 
    const algo = useMemo(() => ALGORITHMS.find(a => a.id === id), [id]);
 
    useEffect(() => {
       if (algo) {
          setSelectedAlgorithm(algo.id);
-         runSimulation();
+         calculate([]);
       }
-   }, [algo, setSelectedAlgorithm, runSimulation]);
+   }, [algo, setSelectedAlgorithm, calculate]);
 
    if (!algo) return <Navigate to="/" />;
 
@@ -103,7 +101,7 @@ const AlgorithmDetail: React.FC = () => {
                </Card>
 
                <div className="space-y-8">
-                  <Card title="Use Cases" icon={<Lightbulb size={20} className="text-amber-400" />}>
+                  <Card title="Use Cases">
                      <div className="flex flex-wrap gap-2 mt-4">
                         {algo.useCases.map((uc, i) => (
                            <span key={i} className="text-xs bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-text-muted">

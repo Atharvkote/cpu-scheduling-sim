@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ALGORITHMS } from '../constants/algorithms';
 import { Card } from '../components/ui/Card';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  BookOpen, 
   ChevronRight, 
-  Zap, 
   ShieldCheck, 
   AlertCircle,
   Lightbulb,
